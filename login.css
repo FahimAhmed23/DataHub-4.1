@@ -1,0 +1,11 @@
+body {
+    background-image: url(bg-img-2.png);
+    background-size: cover;
+}
+.login-btn{
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 8px;
+    background: #34C6F4;
+}

@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(bg-img-2.png);
+    background-size: cover;
+}
+
+.std-menu-bar {
+    background-color: rgba(0, 0, 0, .5);
+    color: #669999;
+    text-align: center;
+
+}
+
+.std-menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+
+.std-menu-bar ul li{
+    width: 180px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.std-menu-bar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.std-menu-bar ul li:hover {
+    background: #002745;
+    border-radius: 3px;
+}
+
+ 
+
+.log-out {
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 35px;
+    width: 85px;
+    border-radius: 5px;
+    background-color: #0AC4EF;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.log-out a {
+    text-decoration: none;
+}
+
+.log-out a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.course-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.cse303 {
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+.cse203 {
+    margin-left: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+.cse204 {
+    margin-left: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+.cse211 {
+    margin-left: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+.chart-container {
+    width: 1000px;
+    height: 500px;
+    margin-top: 5px;
+    margin-left: 400px;
+}
