@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Higher Authority Dashboard</title>
-    <link rel="stylesheet" href="haDashboard.css">
+    <link rel="stylesheet" href="commonHaStyle.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
             <li><a href="haStudentWiseCoPlo.php">Student wise CO/PLO Analysis</a></li>
             <li><a href=".php">Department wise CO/PLO</a></li>
             <li><a href=".php">School wise CO/PLO</a></li>
-            <li><a href=".php">Enrollment Stats</a></li>
+            <li><a href="enrollmentStats.php">Enrollment Stats</a></li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
     </div>

@@ -1,3 +1,4 @@
+/* MENU BAR STYLE START */
 * {
     padding: 0;
     margin: 0;
@@ -127,3 +128,47 @@ body {
     text-decoration: none;
     color: white;
 }
+
+/* MENU BAR STYLE END */
+
+/* SEARCH ID STYLE OF STUDENT WISE CLO PLO START */
+
+.search-id {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.choose-section {
+    margin-top: 10px;
+}
+
+.id-entry {
+    height: 40px;
+    border-radius: 3px;
+    background-color: #002745;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+.cse303 {
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+.cse310 {
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+/* SEARCH ID STYLE OF STUDENT WISE CLO PLO START */

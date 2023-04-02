@@ -1,0 +1,155 @@
+/* STD MENU BAR STYLE START */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(bg-img-2.png);
+    background-size: cover;
+}
+
+.std-menu-bar {
+    background-color: rgba(0, 0, 0, .5);
+    color: #669999;
+    text-align: center;
+
+}
+
+.std-menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+
+.std-menu-bar ul li {
+    width: 180px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.std-menu-bar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.std-menu-bar ul li:hover {
+    background: #002745;
+    border-radius: 3px;
+}
+
+/* .CLO-PLO-sub-menu{
+    display: none;
+}
+.std-menu-bar ul li:hover .CLO-PLO-sub-menu{
+    display: block;
+    position: absolute;
+    background: #0E3C47;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.std-menu-bar ul li:hover .CLO-PLO-sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+.std-menu-bar ul li:hover .CLO-PLO-sub-menu ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+.std-menu-bar ul li:hover .CLO-PLO-sub-menu ul li:last-child{
+    border-bottom: none;
+}
+.std-menu-bar ul li:hover .CLO-PLO-sub-menu ul li a:hover{
+    color: #0AC4EF;
+} */
+.log-out {
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 35px;
+    width: 85px;
+    border-radius: 5px;
+    background-color: #0AC4EF;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.log-out a {
+    text-decoration: none;
+}
+
+.log-out a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* STD MENU BAR STYLE END */
+
+/* COURSE NAME BUTTON STYLE START */
+
+.course-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.cse303 {
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+.cse203 {
+    margin-left: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+.cse204 {
+    margin-left: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+.cse211 {
+    margin-left: 10px;
+    height: 40px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
+/* COURSE NAME BUTTON STYLE END */
+
+/* CHART STYLE START */
+
+.chart-container {
+    width: 800px;
+    height: 400px;
+    margin-top: 5px;
+    margin-left: 450px;
+}
+
+/* CHART STYLE END */

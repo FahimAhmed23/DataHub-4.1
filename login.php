@@ -36,11 +36,24 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             header('location:std_dashboard.php');
         }
      }
-  }    
-
-        else{
-            $invalid=1;
+  } 
+  elseif ($userType == 'HA') {
+        $ha = "SELECT * from employee_t where employeeID='$ID' and password='$password'";
+        $result = mysqli_query($con, $ha);
+        if ($result) {
+            $num = mysqli_num_rows($result);
+            if ($num > 0) {
+                $invalid = 0;
+                session_start();
+                $_SESSION['ID'] = $ID;
+                header('location:haDashboard.php');
+            }
         }
+    }   
+
+     else{
+        $invalid=1;
+    }
   }
   ?>
 

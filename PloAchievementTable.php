@@ -11,7 +11,7 @@ include 'connect.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLO Achievement table</title>
 
-    <link rel="stylesheet" href="commonStyle.css">
+    <link rel="stylesheet" href="commonStdDashboard.css">
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript"></script>

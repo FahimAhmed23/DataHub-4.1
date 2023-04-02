@@ -12,7 +12,7 @@ include "./utils/getPLOData.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overall PLO Analysis</title>
 
-    <link rel="stylesheet" href="overallPloAnalysis.css">
+    <link rel="stylesheet" href="commonStdDashboard.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -50,7 +50,6 @@ include "./utils/getPLOData.php";
             data[2] = <?php echo $PLO4 ?>;
             data[3] = <?php echo $PLO6 ?>;
 
-            console.log(data)
             const ctxOverall = document.getElementById('myChart-overall');
             new Chart(ctxOverall, {
                 type: 'bar',
