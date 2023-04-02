@@ -131,6 +131,31 @@ body {
 
 /* MENU BAR STYLE END */
 
+/* USER INFORMATION STYLE START */
+.user-info {
+    height: 80px;
+    width: 250px;
+    background-color: #002745;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 15px;
+}
+.user-id{
+    padding-left: 40px;
+    padding-top: 15px;
+}
+.user-type{
+    padding-left: 40px;
+    padding-top: 5px;
+
+}
+
+/* USER INFORMATION STYLE END */
+
 /* SEARCH ID STYLE OF STUDENT WISE CLO PLO START */
 
 .search-id {
@@ -172,3 +197,114 @@ body {
 }
 
 /* SEARCH ID STYLE OF STUDENT WISE CLO PLO START */
+
+/* GRADE INPUT STYLE START */
+
+.data-entry-table{
+    display: flex;
+}
+
+.assesment-options {
+    margin-left: 60px;
+    margin-top: 60px;
+    height: 400px;
+    width: 550px;
+    background-color: #002745;
+    border-radius: 10px;
+}
+.assesment-options tbody tr td{
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+ .assesment-options tbody tr td p {
+    margin: 5px 0;
+    padding-left: 50px;
+    color: white;   
+    font-size: 20px;
+ }
+
+ .assesment-options tbody tr td input{
+    margin-left: 50px;
+    height: 20px;
+ }
+
+ .assesment-options tbody tr td.submit-btn-wrapper{
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+ }
+ 
+ .assesment-options tbody tr td.submit-btn-wrapper input.submit-btn {
+    background-color: #9635EE;
+    height: 25px;
+    width: 80px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+ }
+
+ .grade-options{
+    margin-left: 400px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    height: 200px;
+    width: 550px;
+    background-color: #002745;
+    border-radius: 10px;
+}
+.grade-options tbody tr td{
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+ .grade-options tbody tr td p {
+    margin: 5px 0;
+    padding-left: 50px;
+    color: white;   
+    font-size: 20px;
+ }
+
+ .grade-options tbody tr td input{
+    margin-left: 50px;
+    height: 20px;
+ }
+
+ .grade-options tbody tr td.submit-btn-wrapper-3{
+    margin-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+ }
+ 
+ .grade-options tbody tr td.submit-btn-wrapper-3 input.submit-btn-3 {
+    background-color: #9635EE;
+    height: 25px;
+    width: 80px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+ }
+
+ .assesment-options tbody tr td.submit-btn-wrapper-2{
+    margin-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+ }
+ 
+ .assesment-options tbody tr td.submit-btn-wrapper-2 input.submit-btn-2 {
+    background-color: #9635EE;
+    height: 25px;
+    width: 80px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+ }
+
+/* GRADE INPUT STYLE START */

@@ -98,6 +98,33 @@ body {
 
 /* menu-bar css start */
 
+/* USER INFORMATION STYLE START */
+.user-info {
+    height: 80px;
+    width: 300px;
+    background-color: #002745;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 15px;
+}
+
+.user-id {
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.user-type {
+    padding-left: 25px;
+    padding-top: 5px;
+
+}
+
+/* USER INFORMATION STYLE END */
+
 /* STUDENT WISE CO PLO SEARCH BUTTON STYLE START */
 
 .search-id {
@@ -214,3 +241,4 @@ body {
     
 }
 
+/* ENROLLMENT GRAPH STYLE END  */

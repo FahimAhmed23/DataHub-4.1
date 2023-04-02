@@ -1,7 +1,5 @@
 <?php
-session_start();
-$stdId = $_SESSION['ID'];
-/* $usertype = $_SESSION['userType']; */
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +8,7 @@ $stdId = $_SESSION['ID'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Dashboard</title>
+    <title>Data Entry</title>
     <link rel="stylesheet" href="commonFacultyDashboard.css">
 </head>
 
@@ -37,10 +35,6 @@ $stdId = $_SESSION['ID'];
             </li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
-    </div>
-    <div class="user-info">
-        <p class="user-id">ID : <?php echo $stdId ?> </p>
-        <p class="user-type">User Type : Faculty</p>
     </div>
 </body>
 

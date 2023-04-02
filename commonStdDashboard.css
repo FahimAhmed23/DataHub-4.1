@@ -92,6 +92,33 @@ body {
 
 /* STD MENU BAR STYLE END */
 
+/* USER INFORMATION STYLE START */
+.user-info {
+    height: 80px;
+    width: 250px;
+    background-color: #002745;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 15px;
+}
+
+.user-id {
+    padding-left: 40px;
+    padding-top: 15px;
+}
+
+.user-type {
+    padding-left: 40px;
+    padding-top: 5px;
+
+}
+
+/* USER INFORMATION STYLE END */
+
 /* COURSE NAME BUTTON STYLE START */
 
 .course-name {

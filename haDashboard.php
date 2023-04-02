@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+$stdId = $_SESSION['ID'];
+/* $usertype = $_SESSION['userType']; */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,10 @@
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
     </div>
-    <div class=""></div>
+    <div class="user-info">
+        <p class="user-id">ID : <?php echo $stdId ?> </p>
+        <p class="user-type">User Type : Higher Authority</p>
+    </div>
 </body>
 
 </html>
