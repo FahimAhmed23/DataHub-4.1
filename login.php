@@ -10,16 +10,16 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $password=$_POST['password'];
     $userType=$_POST['usertype'];
 
-  if($userType!='Student'){
-    $sql="SELECT * from employee_t where employeeID='$ID' and password='$password'";
-    $result=mysqli_query($con,$sql);
+  if($userType=='Faculty'){
+    $faculty="SELECT * from employee_t where employeeID='$ID' and password='$password'";
+    $result=mysqli_query($con, $faculty);
     if($result){
         $num=mysqli_num_rows($result);
         if($num>0){
           $invalid=0;
             session_start();
             $_SESSION['ID']=$ID;
-            header('location:employee_dashboard.php');
+            header('location:facultyDashboard.php');
         }
      }
   }    
