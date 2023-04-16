@@ -19,7 +19,7 @@ if (isset($_POST['assesment-submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Entry</title>
+    <title>Grade Input</title>
     <link rel="stylesheet" href="commonFacultyDashboard.css">
 </head>
 
@@ -86,80 +86,6 @@ if (isset($_POST['assesment-submit'])) {
                         <td></td>
                         <td class="submit-btn-wrapper">
                             <input type="submit" name="assesment-submit" value="Submit" class="submit-btn">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <form action="" method="post">
-            <table class="assesment-options">
-                <tbody>
-                    <tr>
-                        <td>
-                            <p class="option-text">Marks Details : </p>
-                        </td>
-                        <td><input type="text" name="marks_details" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="option-text">Marks Number : </p>
-                        </td>
-                        <td><input type="text" name="marks_number" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="option-text">Marks Obtained : </p>
-                        </td>
-                        <td><input type="text" name="marks_obtained" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="option-text">Registration ID : </p>
-                        </td>
-                        <td><input type="text" name="marks_regi_id" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="option-text">Exam ID : </p>
-                        </td>
-                        <td><input type="text" name="marks_exam_id" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td class="submit-btn-wrapper-2">
-                            <input type="submit" name="marks-submit" value="Submit" class="submit-btn-2">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-    </div>
-    <div>
-        <form action="" method="post">
-            <table class="grade-options">
-                <tbody>
-                    <tr>
-                        <td>
-                            <p class="option-text">Registration ID : </p>
-                        </td>
-                        <td><input type="text" name="grade_regi_id" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="option-text">Total Marks : </p>
-                        </td>
-                        <td><input type="text" name="total_marks" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="option-text">Grade Point : </p>
-                        </td>
-                        <td><input type="text" name="grade_point" class="submit-details"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td class="submit-btn-wrapper-3">
-                            <input type="submit" name="grade-submit" value="Submit" class="submit-btn-3">
                         </td>
                     </tr>
                 </tbody>

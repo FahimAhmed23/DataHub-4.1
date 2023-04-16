@@ -12,7 +12,7 @@
         $this->conn = mysqli_connect($HOSTNAME, $USERNAME, $PASSWORD, $DATABASE);
 
         if (!$this->conn) {
-            die("Database Connection Erro!");
+            die("Database Connection Error!");
         }
         }
 
@@ -44,19 +44,6 @@
                 return "Info inserted";
             }
         }
-
-        public function add_grade($gradeData)
-        {
-            $grade_regi_id = $gradeData['grade_regi_id'];
-            $total_marks = $gradeData['total_marks'];
-            $grade_point = $gradeData['grade_point'];
-
-            $grade_query = "INSERT INTO student_course_performance_t(registrationID,totalMarksObtained,gradePoint) VALUE($grade_regi_id,$total_marks,$grade_point) ";
-
-            if (mysqli_query($this->conn, $grade_query)) {
-                return "Info inserted";
-            }
-    }
     }
 ?>
 

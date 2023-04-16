@@ -21,14 +21,14 @@ $stdId = $_SESSION['ID'];
             <li><a href="">Subject wise Analysis</a>
                 <div class="analysis-sub-menu">
                     <ul>
-                        <li><a href="gradeSheetAnalysis.php">Grade Sheet Analysis</a></li>
-                        <li><a href="semesterWiseCloPloAnalysis.php">Semester wise CLO/PLO Analysis</a></li>
+                        <li><a href="haGradeSheetAnalysis.php">Grade Sheet Analysis</a></li>
+                        <li><a href="haSemesterWiseCoPlo.php">Semester wise CLO/PLO Analysis</a></li>
                     </ul>
                 </div>
             </li>
             <li><a href="haStudentWiseCoPlo.php">Student wise CO/PLO Analysis</a></li>
-            <li><a href=".php">Department wise CO/PLO</a></li>
-            <li><a href=".php">School wise CO/PLO</a></li>
+            <li><a href="deptWiseCoPlo.php">Department wise CO/PLO</a></li>
+            <li><a href="schoolWiseCoPlo.php.php">School wise CO/PLO</a></li>
             <li><a href="enrollmentStats.php">Enrollment Stats</a></li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>

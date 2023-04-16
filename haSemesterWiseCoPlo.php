@@ -1,5 +1,7 @@
 <?php
-
+session_start();
+$stdId = $_SESSION['ID'];
+/* $usertype = $_SESSION['userType']; */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studetn Wise Analysis</title>
+    <title>Semester Wise</title>
     <link rel="stylesheet" href="commonHaStyle.css">
 </head>
 
@@ -30,13 +32,6 @@
             <li><a href="enrollmentStats.php">Enrollment Stats</a></li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
-    </div>
-    <div class="search-id">
-        <input type="text" id="studentId" name="studentId" class="id-entry" placeholder="Enter Student ID" required>
-        <div class="choose-section">
-            <input type="button" value="CSE303" class="cse303" onclick="">
-            <input type="button" value="CSE310" class="cse310" onclick="">
-        </div>
     </div>
 </body>
 
