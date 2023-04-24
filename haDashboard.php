@@ -1,6 +1,6 @@
 <?php
 session_start();
-$stdId = $_SESSION['ID'];
+$haId = $_SESSION['ID'];
 /* $usertype = $_SESSION['userType']; */
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ $stdId = $_SESSION['ID'];
         </ul>
     </div>
     <div class="user-info">
-        <p class="user-id">ID : <?php echo $stdId ?> </p>
+        <p class="user-id">ID : <?php echo $haId ?> </p>
         <p class="user-type">User Type : Higher Authority</p>
     </div>
 </body>

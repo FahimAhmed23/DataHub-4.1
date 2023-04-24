@@ -1,14 +1,68 @@
 <?php
 include 'dataEntryToDatabase.php';
+include './utils/gradeConvertion.php';
 
 $objDataEntry = new dataEntry();
+$message = "";
 
-if (isset($_POST['assesment-submit'])) {
-    $return_msg = $objDataEntry->add_assesment($_POST);
-} elseif (isset($_POST['marks-submit'])) {
-    $return_msg = $objDataEntry->add_marks($_POST);
-} elseif (isset($_POST['grade-submit'])) {
-    $return_msg = $objDataEntry->add_grade($_POST);
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
+    $message = "";
+    $formData = array(
+        "std_id" => $_POST['std_id'],
+        "ed_year" => $_POST['ed_year'],
+        "ed_sem" => "'".$_POST['ed_sem']."'",
+        "enroll_course" => "'".$_POST['enroll_course']."'",
+        "enroll_section" => $_POST['enroll_section'],
+        "obtained_marks" => $_POST['obtained_marks']
+    );
+
+    $flag = true;
+
+    foreach ($formData as $key => $value) {
+        if(!$value) {
+            $flag = false;
+        }
+    }
+    $_POST = array();
+
+    if($flag) {
+        // std_section_input
+        $col = array("sectionNum", "studentID", "semester", "courseID", "enrolledYear");
+        $value = array($formData["enroll_section"], $formData["std_id"], $formData["ed_sem"], $formData["enroll_course"], $formData["ed_year"] );
+        $columns = implode(", ", $col);
+        $values = implode(", ", $value);
+        $res1 = $objDataEntry->insertIntoTable("std_section", $columns, $values);
+    
+        // grade_table_input
+        $gradeValue = gradeConvertion($formData["obtained_marks"]);
+        $gradeTableCol = array("studentID", "obtainedGrade");
+        $values = array($formData["std_id"], $gradeValue);
+        $gradeColumns = implode(", ", $gradeTableCol);
+        $gradeValues = implode(", ", $values);
+        $res2 = $objDataEntry->insertIntoTable("student_grade", $gradeColumns, $gradeValues);
+
+        // backlog_table_input
+        session_start();
+        $facultyId = $_SESSION['ID'];
+        $milliseconds = floor(microtime(true)*1000);
+        /* $seconds = $milliseconds/1000;
+        $date = date("d/m/y H:i:s", $seconds); */
+        $backlogCol = array("studentID", "educationalYear", "educationalSemester", "enrolledCourse", "enrolledSection", "obtainedGrade", "userID", "timeStamp");
+        $backlogVal = array($formData["std_id"], $formData["ed_year"], $formData["ed_sem"], $formData["enroll_course"], $formData["enroll_section"], $gradeValue, $facultyId, $milliseconds) ;
+        $backlogCols = implode(", ", $backlogCol);
+        $backlogVals = implode(", ", $backlogVal);
+        $res3 = $objDataEntry->insertIntoTable("backlog_data", $backlogCols, $backlogVals);
+
+        if($res1 && $res2 && $res3) {
+            $message = "data entry successfull!";
+            $objDataEntry->closeMYSQL();
+        }
+    }
+    else {
+        echo "All field required";
+    }
 }
 
 ?>
@@ -54,33 +108,39 @@ if (isset($_POST['assesment-submit'])) {
                 <tbody>
                     <tr>
                         <td>
-                            <p class="option-text">Assesment Details : </p>
+                            <p class="option-text">Student ID : </p>
                         </td>
-                        <td><input type="text" name="details_submit" class="submit-details"></td>
+                        <td><input type="text" name="std_id" class="submit-details"></td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="option-text">Assesment Marks : </p>
+                            <p class="option-text">Educational year : </p>
                         </td>
-                        <td><input type="text" name="marks_submit" class="submit-details"></td>
+                        <td><input type="text" name="ed_year" class="submit-details"></td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="option-text">Difficulty Level : </p>
+                            <p class="option-text">Educational semester : </p>
                         </td>
-                        <td><input type="text" name="level_submit" class="submit-details"></td>
+                        <td><input type="text" name="ed_sem" class="submit-details"></td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="option-text">Exam ID : </p>
+                            <p class="option-text">Enroll course : </p>
                         </td>
-                        <td><input type="text" name="exam_id_submit" class="submit-details"></td>
+                        <td><input type="text" name="enroll_course" class="submit-details"></td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="option-text">Course ID : </p>
+                            <p class="option-text">Enrolled section : </p>
                         </td>
-                        <td><input type="text" name="course_id_submit" class="submit-details"></td>
+                        <td><input type="text" name="enroll_section" class="submit-details"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="option-text">Total Marks: </p>
+                        </td>
+                        <td><input type="text" name="obtained_marks" class="submit-details"></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -91,6 +151,9 @@ if (isset($_POST['assesment-submit'])) {
                 </tbody>
             </table>
         </form>
+    </div>
+    <div>
+        <?php echo $message ?>
     </div>
 
 </body>

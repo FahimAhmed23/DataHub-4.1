@@ -168,6 +168,16 @@ body {
     font-weight: bolder;
 }
 
+.select{
+    margin-left: 40px;
+    margin-top: 30px;
+    height: 40px;
+    width: 150px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+}
+
 /* COURSE NAME BUTTON STYLE END */
 
 /* CHART STYLE START */
