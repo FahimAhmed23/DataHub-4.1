@@ -190,3 +190,28 @@ body {
 }
 
 /* CHART STYLE END */
+
+/* COURSE OUTLINE STYLE START */
+
+.select {
+    padding: 8px, 12px;
+    width: 150px;
+    height: 36px;
+    margin-left: 44.5%;
+    margin-top: 18px;
+    color: black;
+    background-color: #002745;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: white;
+}
+
+/* COURSE OUTLINE STYLE START */

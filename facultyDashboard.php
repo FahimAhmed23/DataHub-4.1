@@ -32,6 +32,7 @@ $facultyId = $_SESSION['ID'];
                     <ul>
                         <li><a href="createOutline.php">Create Course Outline</a></li>
                         <li><a href="gradeInput.php">Grade Input</a></li>
+                        <li><a href="">Add Exam</a></li>
                     </ul>
                 </div>
             </li>

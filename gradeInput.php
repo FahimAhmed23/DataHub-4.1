@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
     $formData = array(
         "std_id" => $_POST['std_id'],
         "ed_year" => $_POST['ed_year'],
-        "ed_sem" => "'".$_POST['ed_sem']."'",
-        "enroll_course" => "'".$_POST['enroll_course']."'",
+        "ed_sem" => "'" . $_POST['ed_sem'] . "'",
+        "enroll_course" => "'" . $_POST['enroll_course'] . "'",
         "enroll_section" => $_POST['enroll_section'],
         "obtained_marks" => $_POST['obtained_marks']
     );
@@ -21,20 +21,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
     $flag = true;
 
     foreach ($formData as $key => $value) {
-        if(!$value) {
+        if (!$value) {
             $flag = false;
         }
     }
     $_POST = array();
 
-    if($flag) {
+    if ($flag) {
         // std_section_input
         $col = array("sectionNum", "studentID", "semester", "courseID", "enrolledYear");
-        $value = array($formData["enroll_section"], $formData["std_id"], $formData["ed_sem"], $formData["enroll_course"], $formData["ed_year"] );
+        $value = array($formData["enroll_section"], $formData["std_id"], $formData["ed_sem"], $formData["enroll_course"], $formData["ed_year"]);
         $columns = implode(", ", $col);
         $values = implode(", ", $value);
         $res1 = $objDataEntry->insertIntoTable("std_section", $columns, $values);
-    
+
         // grade_table_input
         $gradeValue = gradeConvertion($formData["obtained_marks"]);
         $gradeTableCol = array("studentID", "obtainedGrade");
@@ -46,21 +46,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
         // backlog_table_input
         session_start();
         $facultyId = $_SESSION['ID'];
-        $milliseconds = floor(microtime(true)*1000);
+        $milliseconds = floor(microtime(true) * 1000);
         /* $seconds = $milliseconds/1000;
         $date = date("d/m/y H:i:s", $seconds); */
         $backlogCol = array("studentID", "educationalYear", "educationalSemester", "enrolledCourse", "enrolledSection", "obtainedGrade", "userID", "timeStamp");
-        $backlogVal = array($formData["std_id"], $formData["ed_year"], $formData["ed_sem"], $formData["enroll_course"], $formData["enroll_section"], $gradeValue, $facultyId, $milliseconds) ;
+        $backlogVal = array($formData["std_id"], $formData["ed_year"], $formData["ed_sem"], $formData["enroll_course"], $formData["enroll_section"], $gradeValue, $facultyId, $milliseconds);
         $backlogCols = implode(", ", $backlogCol);
         $backlogVals = implode(", ", $backlogVal);
         $res3 = $objDataEntry->insertIntoTable("backlog_data", $backlogCols, $backlogVals);
 
-        if($res1 && $res2 && $res3) {
+        if ($res1 && $res2 && $res3) {
             $message = "data entry successfull!";
             $objDataEntry->closeMYSQL();
         }
-    }
-    else {
+    } else {
         echo "All field required";
     }
 }
@@ -95,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
                     <ul>
                         <li><a href="createOutline.php">Create Course Outline</a></li>
                         <li><a href="gradeInput.php">Grade Input</a></li>
+                        <li><a href="">Add Exam</a></li>
                     </ul>
                 </div>
             </li>

@@ -29,6 +29,62 @@ include 'connect.php'
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
     </div>
+
+    <form method="post">
+        <div style="display:flex;justify-content:space-evenly;">
+
+            <select style="width:200px;margin-left:0px;" name="courseID" class="select">
+                <option disabled selected>Course</option>
+                <option value="CSC101">CSC101</option>
+                <option value="CSC303">CSC303</option>
+                <option value="MIS430">MIS430</option>
+            </select>
+
+            <select style="width:200px;margin-left:0px;" name="sectionNum" class="select">
+                <option disabled selected>Section</option>
+                <option value="1">Section-1</option>
+                <option value="2">Section-2</option>
+                <option value="3">Section-3</option>
+            </select>
+
+            <select style="width:200px;margin-left:0px;" name="semester" class="select">
+                <option disabled selected>Semester</option>
+                <option value="spring">spring</option>
+                <option value="summer">summer</option>
+                <option value="autumn">autumn</option>
+            </select>
+
+            <select style="width:200px;margin-left:0px;" name="year" class="select">
+                <option disabled selected>year</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+
+        <input style="margin-top:25px;" type="submit" value="Submit" name="submit" class="select">
+    </form>
+
+    <?php
+    if (isset($_POST['submit'])) {
+
+        session_start();
+        $year = $_POST['year'];
+        $semester = $_POST['semester'];
+        $sectionNum = $_POST['sectionNum'];
+        $courseID = $_POST['courseID'];
+
+        //Getting section ID from database
+        $result = mysqli_query($con, "SELECT sec.sectionID AS sectionID
+                  FROM section_t AS sec
+                  WHERE sec.sectionNum='$sectionNum' AND sec.courseID='$courseID' 
+                  AND sec.semester='$semester' AND sec.year='$year'");
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['sectionID'] = $row['sectionID'];
+
+        header('location:createOutlinePdf.php');
+    }
+    ?>
 </body>
 
 </html>
