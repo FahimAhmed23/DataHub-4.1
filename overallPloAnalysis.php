@@ -30,20 +30,15 @@ include "./utils/getPLOData.php";
         </ul>
     </div>
     <div>
-        <select name="courseID" class="select" id="CSECourseSelection-2">
+        <select name="courseID" class="select1" id="CSECourseSelection-2">
             <option disabled selected>Select Course</option>
             <option value="CSC101">CSC101</option>
             <option value="CSE203">CSE203</option>
             <option value="CSE303">CSE303</option>
         </select>
-        <button class="cse303" onclick="showPLOGraph()">Submit</button>
+        <button class="cse303" onclick="showPLOGraph()">View</button>
     </div>
-    <!-- <div class="course-name">
-        <button class="cse303" onclick="showPLOGraph('CSE303')">CSE303</button>
-        <button class="cse203" onclick="showPLOGraph('CSE203')">CSE203</button>
-        <button class="cse204" onclick="showPLOGraph('CSE204')">CSE204</button>
-        <button class="cse211" onclick="showPLOGraph('CSE211')">CSE211</button>
-    </div> -->
+
     <div id="chart-container-overall" class="chart-container">
     </div>
 

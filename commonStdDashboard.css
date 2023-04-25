@@ -129,26 +129,29 @@ body {
     padding-top: 20px;
 }
 
-.cse303 {
+.plo {
     height: 40px;
-    width: 90px;
+    width: 150px;
     border-radius: 8px;
     background-color: #032947;
     color: white;
     font-weight: bolder;
+    margin-left: 39px;
+    margin-top: 10px;
 }
 
-.cse203 {
+.co {
     margin-left: 10px;
+    margin-top: 10px;
     height: 40px;
-    width: 90px;
+    width: 150px;
     border-radius: 8px;
     background-color: #032947;
     color: white;
     font-weight: bolder;
 }
 
-.cse204 {
+.cse303 {
     margin-left: 10px;
     height: 40px;
     width: 90px;
@@ -168,7 +171,7 @@ body {
     font-weight: bolder;
 }
 
-.select{
+.select1{
     margin-left: 40px;
     margin-top: 30px;
     height: 40px;
@@ -183,10 +186,21 @@ body {
 /* CHART STYLE START */
 
 .chart-container {
+    display: flex;
+}
+.chart-container-PLO{
     width: 800px;
     height: 400px;
     margin-top: 5px;
     margin-left: 450px;
+    margin-bottom: 20px;
+}
+.chart-container-CO{
+    width: 800px;
+    height: 400px;
+    margin-top: 5px;
+    margin-left: 150px;
+    margin-right: 20px;
 }
 
 /* CHART STYLE END */

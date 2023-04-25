@@ -18,14 +18,7 @@ $stdId = $_SESSION['ID'];
     <div class="faculty-menu-bar">
         <ul>
             <li><a href="facultyDashboard.php">Home</a></li>
-            <li><a href="">Analysis</a>
-                <div class="analysis-sub-menu">
-                    <ul>
-                        <li><a href="gradeSheetAnalysis.php">Grade Sheet Analysis</a></li>
-                        <li><a href="semesterWiseCloPloAnalysis.php">Semester wise CLO/PLO Analysis</a></li>
-                    </ul>
-                </div>
-            </li>
+            <li><a href="gradeSheetAnalysis.php">Grade Sheet</a></li>
             <li><a href="studentWiseCoPlo.php">Student wise CO/PLO Analysis</a></li>
             <li><a href="dataEntry.php">Data Entry</a>
                 <div class="data-entry-sub-menu">

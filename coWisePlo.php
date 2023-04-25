@@ -30,22 +30,15 @@ include "./utils/getPLOData.php";
         </ul>
     </div>
     <div>
-        <select name="courseID" class="select" id="CSECourseSelection">
+        <select name="courseID" class="select1" id="CSECourseSelection">
             <option disabled selected>Select Course</option>
             <option value="CSC101">CSC101</option>
             <option value="CSE203">CSE203</option>
             <option value="CSE303">CSE303</option>
         </select>
-        <button class="cse303" onclick="showCOWisePLOGraph()">Submit</button>
+        <button class="cse303" onclick="showCOWisePLOGraph()">View</button>
     </div>
-    <!-- <form action="" method="POST">
-    </form> -->
-    <!-- <div class="course-name">
-        <button class="cse303" onclick="showCOWisePLOGraph('CSE303')">CSE303</button>
-        <button class="cse203" onclick="showCOWisePLOGraph('CSE203')">CSE203</button>
-        <button class="cse204" onclick="showCOWisePLOGraph('CSE204')">CSE204</button>
-        <button class="cse211" onclick="showCOWisePLOGraph('CSE211')">CSE211</button>
-    </div> -->
+   
     <div class="chart-container" id="chart-container"></div>
 
     <script>
@@ -87,13 +80,7 @@ include "./utils/getPLOData.php";
                                     } = data;
                                     let label = "";
                                     if (datasetIndex === 0) {
-                                        label = `
-                    CO$ {
-                        dataIndex + 1
-                    }
-                    $ {
-                        raw.toFixed(2)
-                    } % `;
+                                        label = `CO$ {dataIndex + 1}$ {raw.toFixed(2)} % `;
                                     } else if (datasetIndex === 1) {
                                         let PLOValue;
                                         PLOValue =
@@ -105,13 +92,7 @@ include "./utils/getPLOData.php";
                                             (PLOValue = 4) :
                                             dataIndex === 3 ?
                                             (PLOValue = 6) : "";
-                                        label = `
-                    PLO$ {
-                        PLOValue
-                    }
-                    $ {
-                        raw.toFixed(2)
-                    } % `;
+                                        label = `PLO$ {PLOValue}$ {raw.toFixed(2)} % `;
                                     }
                                     return label;
                                 }
