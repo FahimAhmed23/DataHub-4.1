@@ -242,3 +242,16 @@ body {
 }
 
 /* ENROLLMENT GRAPH STYLE END  */
+
+/* BACKLOG_DATA_DESIGN START*/
+.backlog-view-btn{
+    margin-left: 600px;
+    margin-top: 20px;
+    height: 42px;
+    width: 150px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+    border-radius: 4px;
+}
+/* BACKLOG_DATA_DESIGN START*/

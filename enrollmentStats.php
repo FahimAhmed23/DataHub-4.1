@@ -15,21 +15,37 @@ include 'connect.php';
 </head>
 
 <body>
-    <div class="ha-menu-bar">
+<div class="ha-menu-bar">
         <ul>
             <li><a href="haDashboard.php">Home</a></li>
-            <li><a href="">Subject wise Analysis</a>
+            <li><a href="">Student Analysis</a>
                 <div class="analysis-sub-menu">
                     <ul>
-                        <li><a href="haGradeSheetAnalysis.php">Grade Sheet Analysis</a></li>
-                        <li><a href="haSemesterWiseCoPlo.php">Semester wise CLO/PLO Analysis</a></li>
+                        <li><a href="haGradeSheet.php">Grade Sheet</a></li>
+                        <li><a href="haStudentWiseCoPlo.php">Student PLO</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="haStudentWiseCoPlo.php">Student wise CO/PLO Analysis</a></li>
-            <li><a href="deptWiseCoPlo.php">Department wise CO/PLO</a></li>
-            <li><a href="schoolWiseCoPlo.php">School wise CO/PLO</a></li>
+            <li><a href="">PLO Comparison</a>
+                <div class="analysis-sub-menu">
+                    <ul>
+                        <li><a href="haCourseWiseComparison.php">Course Wise</a></li>
+                        <li><a href="haProgramWiseComparison.php">Program Wise</a></li>
+                        <li><a href="haSchoolWiseComparison.php">School Wise</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="backlogData.php">Backlog Data</a></li>
             <li><a href="enrollmentStats.php">Enrollment Stats</a></li>
+            <li><a href="">GPA Analysis</a>
+                <div class="analysis-sub-menu">
+                    <ul>
+                        <li><a href="haschoolDeptProgramGpa.php">School/Dept Wise</a></li>
+                        <li><a href="haCourseGpa.php">Course Wise</a></li>
+                        <li><a href="haInstructorGpa.php">Instructor Wise</a></li>
+                    </ul>
+                </div>
+            </li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
     </div>

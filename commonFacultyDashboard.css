@@ -204,14 +204,33 @@ body {
     background-color: #032947;
     color: white;
     font-weight: bolder;
+    border-radius: 4px;
 }
 
+.select2 {
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 42px;
+    width: 150px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+    border-radius: 4px;
+}
 /* SEARCH ID STYLE OF STUDENT WISE CLO PLO START */
 
-/* GRADE INPUT STYLE START */
-
-
-/* GRADE INPUT STYLE START */
+/* GRADE sheet STYLE START */
+.grade-generate-btn {
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 42px;
+    width: 150px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+    border-radius: 4px;
+}
+/* GRADE sheet STYLE START */
 
 /* COURSE OUTLINE STYLE START */
 

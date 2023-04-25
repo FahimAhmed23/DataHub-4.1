@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
 
         // grade_table_input
         $gradeValue = gradeConvertion($formData["obtained_marks"]);
-        $gradeTableCol = array("studentID", "obtainedGrade");
-        $values = array($formData["std_id"], $gradeValue);
+        $gradeTableCol = array("studentID", "section", "courseID", "totalMarks", "obtainedGrade");
+        $values = array($formData["std_id"], $formData["enroll_section"], $formData["enroll_course"], $formData["obtained_marks"], $gradeValue);
         $gradeColumns = implode(", ", $gradeTableCol);
         $gradeValues = implode(", ", $values);
         $res2 = $objDataEntry->insertIntoTable("student_grade", $gradeColumns, $gradeValues);

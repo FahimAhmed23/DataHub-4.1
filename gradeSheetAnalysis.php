@@ -1,7 +1,5 @@
 <?php
-session_start();
-$stdId = $_SESSION['ID'];
-/* $usertype = $_SESSION['userType']; */
+include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +8,38 @@ $stdId = $_SESSION['ID'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <title>Grade Sheet Analysis</title>
     <link rel="stylesheet" href="commonFacultyDashboard.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin-top: 50px;
+            margin-left: 150px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: white;
+            color: black;
+        }
+        tr{
+            background-color: #FAF9F6;
+            color: black;
+        }
+
+        th {
+            background-color: #032947;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,6 +60,31 @@ $stdId = $_SESSION['ID'];
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
     </div>
+
+    <div>
+        <input type="text" id="section" name="section" placeholder="Enter Section" class="select1">
+        <input type="text" id="courseID" name="courseID" placeholder="Enter Course ID" class="select2">
+    </div>
+    <div>
+        <button id="submit" class="grade-generate-btn">Generate</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#submit").click(function() {
+                var section = $("#section").val();
+                var courseID = $("#courseID").val();
+                $.ajax({
+                    url: "gradeSheet.php?section=" + section + "&courseID=" + courseID,
+                    type: "GET",
+                    success: function(response) {
+                        $("#result").html(response);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

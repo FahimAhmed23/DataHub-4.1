@@ -19,9 +19,9 @@ $stdId = $_SESSION['ID'];
         <ul>
             <li class="hello"><a href="std_dashboard.php">Home</a></li>
             <li><a href="coWisePlo.php">CO wise PLO Analysis</a></li>
-            <!-- <li><a href="courseWisePlo.php">Course wise PLO Analysis</a></li> -->
             <li><a href="spiderChartAnalysis.php" target="_self">Spider Chart Analysis</a></li>
-            <li><a href="overallPloAnalysis.php">Overall PLO</a></li>
+            <li><a href="courseWisePloAnalysis.php">Course Wise PLO</a></li>
+            <li><a href="stdGradeSheet.php">Grade Sheet</a></li>
             <li><a href="courseOutline.php">Course Outline</a></li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>

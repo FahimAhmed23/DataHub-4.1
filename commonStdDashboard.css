@@ -24,7 +24,7 @@ body {
 }
 
 .std-menu-bar ul li {
-    width: 180px;
+    width: 150px;
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -188,6 +188,7 @@ body {
 .chart-container {
     display: flex;
 }
+
 .chart-container-PLO{
     width: 800px;
     height: 400px;
@@ -229,3 +230,16 @@ body {
 }
 
 /* COURSE OUTLINE STYLE START */
+
+/* GRADE SHEET STYLE START */
+.std-gradesheet{
+    margin-left: 600px;
+    margin-top: 20px;
+    height: 42px;
+    width: 150px;
+    background-color: #032947;
+    color: white;
+    font-weight: bolder;
+    border-radius: 4px;
+}
+/* GRADE SHEET STYLE END */

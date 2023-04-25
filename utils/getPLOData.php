@@ -1,7 +1,13 @@
 <?php
 try {
     session_start();
-    $studentId = $_SESSION["ID"] ? $_SESSION["ID"] : false;
+    $studentId;
+    if(isset($_SESSION["userType"]) && $_SESSION['userType'] == "Faculty") {
+        $studentId = $_REQUEST["studentId"] ? $_REQUEST["studentId"] : false;
+    }
+    else {
+        $studentId = $_SESSION["ID"] ? $_SESSION["ID"] : false;
+    }
 
     if($studentId == false) {
         throw new Exception("Student ID not found");
@@ -14,6 +20,7 @@ try {
                 AND marks.courseID = assesment.courseID
                 AND marks.courseID = '$courseID'
                 AND (marks.registrationID = (SELECT registrationID FROM `registration_t` WHERE studentID = $studentId))";
+
         
         /* "SELECT marks.marksObtained, marks.examID, assesment.assesmentMarks FROM marks_t marks, assesment_t assesment WHERE marks.examID = assesment.exaamID AND (marks.registrationID = (SELECT registrationID FROM `registration_t` WHERE studentID = $studentId))" */;
         include("../connect.php");

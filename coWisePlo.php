@@ -20,12 +20,12 @@ include "./utils/getPLOData.php";
 <body>
     <div class="std-menu-bar">
         <ul>
-            <li><a href="std_dashboard.php" target="_self">Home</a></li>
-            <li><a href="coWisePlo.php" target="_self">CO wise PLO Analysis</a></li>
-            <!-- <li><a href="courseWisePlo.php" target="_self">Course wise PLO Analysis</a></li> -->
+            <li class="hello"><a href="std_dashboard.php">Home</a></li>
+            <li><a href="coWisePlo.php">CO wise PLO Analysis</a></li>
             <li><a href="spiderChartAnalysis.php" target="_self">Spider Chart Analysis</a></li>
-            <li><a href="overallPloAnalysis.php" target="_self">Overall PLO</a></li>
-            <li><a href="courseOutline.php" target="_self">Course Outline</a></li>
+            <li><a href="courseWisePloAnalysis.php">Course Wise PLO</a></li>
+            <li><a href="stdGradeSheet.php">Grade Sheet</a></li>
+            <li><a href="courseOutline.php">Course Outline</a></li>
             <button class="log-out" type="button"><a href="logout.php" target="_self">Log Out</a></button>
         </ul>
     </div>
@@ -38,7 +38,7 @@ include "./utils/getPLOData.php";
         </select>
         <button class="cse303" onclick="showCOWisePLOGraph()">View</button>
     </div>
-   
+
     <div class="chart-container" id="chart-container"></div>
 
     <script>
@@ -69,36 +69,6 @@ include "./utils/getPLOData.php";
                             min: 0
                         }
                     },
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: (data) => {
-                                    const {
-                                        datasetIndex,
-                                        dataIndex,
-                                        raw
-                                    } = data;
-                                    let label = "";
-                                    if (datasetIndex === 0) {
-                                        label = `CO$ {dataIndex + 1}$ {raw.toFixed(2)} % `;
-                                    } else if (datasetIndex === 1) {
-                                        let PLOValue;
-                                        PLOValue =
-                                            dataIndex === 0 ?
-                                            (PLOValue = 2) :
-                                            dataIndex === 1 ?
-                                            (PLOValue = 3) :
-                                            dataIndex === 2 ?
-                                            (PLOValue = 4) :
-                                            dataIndex === 3 ?
-                                            (PLOValue = 6) : "";
-                                        label = `PLO$ {PLOValue}$ {raw.toFixed(2)} % `;
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    }
                 },
                 responsive: true,
                 maintainAspectRatio: false,

@@ -72,36 +72,6 @@
                             min: 0
                         }
                     },
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                label: (data) => {
-                                    const {
-                                        datasetIndex,
-                                        dataIndex,
-                                        raw
-                                    } = data;
-                                    let label = "";
-                                    if (datasetIndex === 0) {
-                                        label = `CO$ {dataIndex + 1}$ {raw.toFixed(2)} % `;
-                                    } else if (datasetIndex === 1) {
-                                        let PLOValue;
-                                        PLOValue =
-                                            dataIndex === 0 ?
-                                            (PLOValue = 2) :
-                                            dataIndex === 1 ?
-                                            (PLOValue = 3) :
-                                            dataIndex === 2 ?
-                                            (PLOValue = 4) :
-                                            dataIndex === 3 ?
-                                            (PLOValue = 6) : "";
-                                        label = `PLO$ {PLOValue}$ {raw.toFixed(2)} % `;
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    }
                 },
                 responsive: true,
                 maintainAspectRatio: false,
@@ -114,10 +84,10 @@
             chartObjectFaculty = ctxFaculty;
         }
 
-        function createCanvasElement(id) {
+        function createCanvasElement(courseId, studentId) {
             const canvasWrapper = document.getElementById("faculty-chart-container");
             const canvas = document.createElement("canvas");
-            canvas.setAttribute("id", `FacultyChart-${id}`);
+            canvas.setAttribute("id", `FacultyChart-${courseId}-${studentId}`);
             canvasWrapper.appendChild(canvas);
         }
 
@@ -138,8 +108,8 @@
                 }
             };
             var url = "";
-            url = "./utils/getPLOData.php?courseId=" + courseId + "?studentId=" + studentId;
-            xmlhttp.open("POST", url, true);
+            url = "./utils/getPLOData.php?courseId=" + courseId + "&studentId=" + studentId;
+            xmlhttp.open("GET", url, true);
             xmlhttp.send();
         }
     </script>
