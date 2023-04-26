@@ -149,6 +149,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
         <?php echo $message ?>
     </div>
 
+    <div class="csv-file">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <p class="text-csv">Upload CSV File: <input type="file" name="file" class="upload-btn"></p>
+            <p><input type="submit" name="submit" value="import" class="import-btn"></p>
+        </form>
+    </div>
+    <?php
+    include 'connect.php';
+
+    if (isset($_POST["submit"])) {
+        if ($_FILES['file']['name']) {
+            $filename = explode('.', $_FILES['file']['name']);
+            if ($filename[1] == 'csv') {
+                $handle = fopen($_FILES['file']['tmp_name'], "r");
+                while ($data = fgetcsv($handle)) {
+                    $studentId = mysqli_real_escape_string($con, $data[0]);
+                    $year = mysqli_real_escape_string($con, $data[1]);
+                    $semester = mysqli_real_escape_string($con, $data[2]);
+                    $courseId = mysqli_real_escape_string($con, $data[3]);
+                    $section = mysqli_real_escape_string($con, $data[4]);
+                    $totalMarks = mysqli_real_escape_string($con, $data[5]);
+                    // std_section input
+                    $query1 = "INSERT INTO std_section(sectionNum, studentID, semester, courseID, enrolledYear) VALUES($section, $studentId, '$semester', '$courseId', $year)";
+                    mysqli_query($con, $query1);
+
+                    //grade_table input
+                    $gradeConvert = gradeConvertion($totalMarks);
+                    $query2 = "INSERT INTO student_grade(studentID, section, courseID, totalMarks, obtainedGrade) VALUES($studentId, $section, '$courseId', $totalMarks, $gradeConvert)";
+                    mysqli_query($con, $query2);
+                    // backlog_table input
+                    session_start();
+                    $facultyID = $_SESSION['ID'];
+                    $millisecond = floor(microtime(true) * 1000);
+                    $query3 = "INSERT INTO backlog_data(studentID, educationalYear, educationalSemester, enrolledCourse, enrolledSection, obtainedGrade, userID, timeStamp) VALUES($studentId, $year, '$semester', '$courseId', $section, $gradeConvert, $facultyID, $millisecond)";
+                    mysqli_query($con, $query3);
+                }
+
+                echo 'Import Done Successfully!';
+                fclose($handle);
+            }
+        }
+    }
+    ?>
+
 </body>
 
 </html>

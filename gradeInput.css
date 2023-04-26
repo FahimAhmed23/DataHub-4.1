@@ -248,3 +248,37 @@ body {
     font-size: 15px;
     font-weight: bold;
 }
+
+/* CSV FILE STYLE START */
+
+.csv-file{
+    margin-left: 400px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    height: 80px;
+    width: 550px;
+    background-color: #002745;
+    border-radius: 10px;
+    color: white;
+}
+.text-csv{
+    padding-left: 90px;
+    padding-top: 10px;
+    font-size:large;
+}
+.upload-btn{
+    padding-left: 20px;
+    font-size: medium;
+
+}
+.import-btn{
+    margin-left: 374px;
+    margin-top: 10px;
+    background-color: #9635EE;
+    height: 25px;
+    width: 80px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
