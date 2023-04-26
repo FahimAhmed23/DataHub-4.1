@@ -11,6 +11,14 @@
     <title>Student Wise CO/PLO</title>
     <link rel="stylesheet" href="commonFacultyDashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container-faculty{
+            height: 450px;
+            width: 800px;
+            margin-left: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,7 +50,7 @@
         <button class="cse303" onclick="showCOWisePLOGraph()">View</button>
     </div>
 
-    <div class="chart-container" id="faculty-chart-container"></div>
+    <div class="chart-container-faculty" id="faculty-chart-container"></div>
 
     <script>
         let chartObjectFaculty;

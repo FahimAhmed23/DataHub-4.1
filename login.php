@@ -47,6 +47,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 $invalid = 0;
                 session_start();
                 $_SESSION['ID'] = $ID;
+                $_SESSION['userType'] = $userType;
                 header('location:haDashboard.php');
             }
         }

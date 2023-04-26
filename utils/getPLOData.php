@@ -5,6 +5,9 @@ try {
     if(isset($_SESSION["userType"]) && $_SESSION['userType'] == "Faculty") {
         $studentId = $_REQUEST["studentId"] ? $_REQUEST["studentId"] : false;
     }
+    else if(isset($_SESSION["userType"]) && $_SESSION['userType'] == "HA") {
+        $studentId = $_REQUEST["studentId"] ? $_REQUEST["studentId"] : false;
+    }
     else {
         $studentId = $_SESSION["ID"] ? $_SESSION["ID"] : false;
     }
@@ -20,7 +23,7 @@ try {
                 AND marks.courseID = assesment.courseID
                 AND marks.courseID = '$courseID'
                 AND (marks.registrationID = (SELECT registrationID FROM `registration_t` WHERE studentID = $studentId))";
-
+        /* echo json_encode($query); */
         
         /* "SELECT marks.marksObtained, marks.examID, assesment.assesmentMarks FROM marks_t marks, assesment_t assesment WHERE marks.examID = assesment.exaamID AND (marks.registrationID = (SELECT registrationID FROM `registration_t` WHERE studentID = $studentId))" */;
         include("../connect.php");
@@ -46,6 +49,10 @@ try {
                         break;
                 }
             }
+        }
+        else {
+            echo "0-0-0-0";
+            return;
         }
         $PLO2 = ($obtainedMarks["mid"] / $assesmentMark["mid"]) * 100;
         $PLO3 = (($obtainedMarks["mid"] + $obtainedMarks["final"]) / ($assesmentMark["mid"] + $assesmentMark["final"])) * 100;

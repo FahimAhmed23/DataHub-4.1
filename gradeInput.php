@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
         if ($res1 && $res2 && $res3) {
             $message = "data entry successfull!";
             $objDataEntry->closeMYSQL();
+            header('location:gradeInput.php');
         }
     } else {
         echo "All field required";
@@ -188,6 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['assesment-submit'])) {
 
                 echo 'Import Done Successfully!';
                 fclose($handle);
+                header('location:gradeInput.php');
             }
         }
     }

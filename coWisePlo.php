@@ -15,6 +15,14 @@ include "./utils/getPLOData.php";
     <link rel="stylesheet" href="commonStdDashboard.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container-std-cowiseplo{
+            height: 450px;
+            width: 800px;
+            margin-left: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,7 +47,7 @@ include "./utils/getPLOData.php";
         <button class="cse303" onclick="showCOWisePLOGraph()">View</button>
     </div>
 
-    <div class="chart-container" id="chart-container"></div>
+    <div class="chart-container-std-cowiseplo" id="chart-container"></div>
 
     <script>
         let chartObject;

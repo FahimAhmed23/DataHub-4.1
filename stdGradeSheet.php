@@ -35,7 +35,8 @@ $stdId = $_SESSION['ID'];
             background-color: white;
             color: black;
         }
-        tr{
+
+        tr {
             background-color: #FAF9F6;
             color: black;
         }

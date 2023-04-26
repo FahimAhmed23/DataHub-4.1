@@ -26,4 +26,3 @@ else {
     echo "No Result Found";
 }
 $con->close();
-?>
